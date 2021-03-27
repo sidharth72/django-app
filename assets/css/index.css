@@ -1,0 +1,285 @@
+@charset "UTF-8";
+
+
+
+.navbar{
+
+	background-color: indigo;
+	position: fixed;
+	width:100%;
+	top:0;
+	padding:6px;
+	float: all;
+
+	
+}
+
+@media (max-width: 600px){
+	.form-control{
+
+		display: none;
+		max-width: 120px;
+
+	}
+}
+
+.web-name{
+
+
+	font-size:30px;
+	font-weight: 600;
+	color: white;
+	text-shadow: 1px 1px 1px hsl(0,0%,85%);
+	
+	
+}
+.ii{
+
+	font-family: monospace;
+	font-weight: 900;
+}
+
+.darkmode{
+
+	
+	margin-left:2px;
+	margin-right: 100px;
+	padding-left: 6px;
+	margin-top: 9px;
+	color:black;
+
+
+
+}
+.whitemode{
+
+
+	
+	margin-top: 5px;
+	margin-left: 2px;
+	margin-right: 100px;
+	padding-left: 6px;
+	color:grey;
+
+}
+
+#head{
+
+	color:dodgerblue;
+	font-weight: bolder;
+	font-size: 30px;
+
+
+}
+
+
+
+.btn.btn-primary{
+
+	background-color:white;
+	color:rgba(40, 58, 90, 0.9);
+	font-weight: bolder;
+	border-radius:15px; 
+}
+#items{
+
+	color:black;
+	font-weight: bold;
+	font-size: 12px;
+	font-family:Helvetica;
+	border-style:solid;
+	border-width: 2px;
+	border-radius:20px;
+	padding-right: 18px;
+	padding-left:18px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-color:#47b2e4;
+
+}
+.item{
+
+	color:white;
+	font-size: 12px;
+	font-family: Helvetica;
+	font-weight: 400;
+	border-style: solid;
+	border-radius:20px;
+	border-width: 2px;
+	border-color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+
+}
+
+
+.item:hover {
+
+	background-color: white;
+	color: black;
+
+}
+
+
+
+
+@media (max-width: 700px){
+	#items{
+
+		display:none;
+	}
+}
+@media (max-width: 700px){
+	.item{
+
+		display:none;
+	}
+}
+
+#list{
+
+	font-size:30px;
+	color: white;
+}
+#list:hover{
+
+	color: black;
+}
+#search-icon:hover{
+
+	color: black;
+}
+@media (min-width: 700px){
+
+	.glyphicon.glyphicon-align-justify{
+
+		display: none;
+	}
+	#search-icon{
+
+		display: none;
+	}
+}
+
+#search-icon{
+
+	font-size: 30px;
+	color: white;
+}
+
+
+
+.container{
+
+	background-color: hsl(0,0%,100%);
+}
+
+body {font-family: "Helvetica", sans-serif;}
+
+.sidebar {
+  height: 95%;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 62px;
+  left: 0;
+  overflow-x: hidden;
+  background-color:  #f1f1f1;
+  margin-top: 9px;
+  border-right: double 1px;
+  border-color: hsl(0,0%,86%);
+
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  color: rgb(30,40,50,0.9);
+  display: block;
+  text-align:left;
+
+}
+
+.sidebar a:hover {
+  color: mediumseagreen;
+}
+
+.main {
+  margin-left: 100px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+  margin-top: 60px;
+}
+
+@media (max-width: 700px){
+
+	.sidebar{
+
+		display: none;
+}
+
+}
+
+
+
+@media (max-width: 600px){
+
+	.main{
+
+		margin-left: 10px;
+	}
+}
+
+
+
+@media (max-width: 600px){
+	.text{
+
+		padding:2px;
+	}
+}
+
+#active{
+
+	color:mediumseagreen;
+	 
+}
+
+.sidebar-heading{
+
+	color:black;
+	padding:5px;
+	font-style: unset;
+	font-weight: bold;
+}
+
+.sub-header{
+
+	font-weight: lighter;
+	font-size:30px;
+}
+
+.para-font{
+
+	font-size:15px;
+	margin-top: 25px;
+	margin-top: 15px;
+
+
+
+}
+.image{
+
+	border-radius: 7px;
+}
+@media only screen and (max-width: 600px){
+	.image{
+
+		height: 250px;
+		width: 300px;
+		
+	}
+}
+
