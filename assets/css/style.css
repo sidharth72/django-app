@@ -56,8 +56,8 @@ li {
 p {
   color: #505050;
   font-weight: 300;
-  letter-spacing: 0.5px;
-  line-height: 2;
+  letter-spacing: 0px;
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 
@@ -67,7 +67,7 @@ p {
   height: 200px;
   margin-bottom: 30px;
   width: 250px;
-  border-radius: 20px;
+
 }
 
 .container-full {
@@ -141,10 +141,10 @@ p {
   left: 0;
   top: 0;
   right: 0;
-  height: 48px;
-  z-index: 3;
-  transition: all 0.5s ease;
+  height: 50px;
+
 }
+
 
 #header #logo {
   padding: 6px 0 0 0;
@@ -155,7 +155,7 @@ p {
   font-family: helvetica;
   font-size: 30px;
   font-weight: bolder;
-  margin: 0;
+  margin-left: 10px;
 }
 
 #header #logo h1 a {
@@ -163,6 +163,16 @@ p {
   line-height: 1;
   display: inline-block;
   text-decoration: none;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+@media (max-width:600px){
+  #header #logo h1 a{
+    color:grey;
+  }
+  #header{
+    background-color: white;
+  }
 }
 
 #header #logo h1 a span {
@@ -416,20 +426,25 @@ p {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 999;
+  z-index: 669;
   margin: 4px 20px 0 0;
   border: 0;
   background: none;
-  font-size: 24px;
+  font-size: 15px;
   display: none;
-  transition: all 0.4s;
-  outline: none;
-  cursor: pointer;
+
+
+  
 }
 
 #mobile-nav-toggle i {
   color: white;
   font-size: 24px;
+}
+@media (max-width:600px){
+  #mobile-nav-toggle i{
+    color:black;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1303,13 +1318,21 @@ body.mobile-nav-active #mobile-nav-toggle i {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  background: #2a2c30;
-  padding-top: 70px;
+  background:white;
+  padding-top: 20px;
 }
 .footer .container{
 
-  background-color: #2a2c30;
+  background-color: white;
+
   
+}
+
+
+.footer .container p{
+
+  padding-bottom: 40px;
+  height: 100%;
 }
 
 .footer .footer-logo .navbar-brand {
@@ -1332,20 +1355,20 @@ body.mobile-nav-active #mobile-nav-toggle i {
 }
 
 .footer .list-menu > h4 {
-  color: #fff;
+  color:dodgerblue;
   padding-bottom: 20px;
 }
 
 .footer .list-menu ul li a {
-  color: #fff;
-  font-size: 12px;
+  color:steelblue;
+  font-size: 15px;
   padding-left: 5px;
   text-decoration: none;
   letter-spacing: 0;
 }
 
 .footer .copyrights {
-  background: #fff;
+  background: dodgerblue;
   margin-top: 50px;
   text-align: center;
   padding: 25px;
@@ -1366,14 +1389,14 @@ body.mobile-nav-active #mobile-nav-toggle i {
 }
 
 .footer .container h2{
-   color:white;
+   color:black;
    text-align: center;
   
 
 }
 
 .footer .container p{
-   color:white;
+   color:black;
    text-align: center;
    padding-bottom: 40px;
 }

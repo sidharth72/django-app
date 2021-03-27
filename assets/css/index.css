@@ -1,10 +1,11 @@
+
 @charset "UTF-8";
 
 
 
 .navbar{
 
-	background-color: indigo;
+	background-color:white;
 	position: fixed;
 	width:100%;
 	top:0;
@@ -63,6 +64,29 @@
 
 }
 
+#customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  #customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color:white;
+	color:black;
+  }
+
 #head{
 
 	color:dodgerblue;
@@ -70,6 +94,12 @@
 	font-size: 30px;
 
 
+}
+
+.btn-primary{
+
+	margin-left: 20px;
+	border-radius: 10px;
 }
 
 
@@ -105,7 +135,6 @@
 	font-weight: 400;
 	border-style: solid;
 	border-radius:20px;
-	border-width: 2px;
 	border-color: white;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -171,9 +200,10 @@
 
 
 
-.container{
+.container .main{
 
-	background-color: hsl(0,0%,100%);
+	width: 70%;
+
 }
 
 body {font-family: "Helvetica", sans-serif;}
@@ -208,19 +238,19 @@ body {font-family: "Helvetica", sans-serif;}
 }
 
 .main {
-  margin-left: 100px; /* Same as the width of the sidenav */
+  margin-left: 10px; /* Same as the width of the sidenav */
   padding: 0px 10px;
   margin-top: 60px;
 }
 
-@media (max-width: 700px){
+@media (max-width: 600px){
 
-	.sidebar{
+	.container .main{
 
-		display: none;
+		width: 100%;
+	}
 }
 
-}
 
 
 
@@ -238,6 +268,7 @@ body {font-family: "Helvetica", sans-serif;}
 	.text{
 
 		padding:2px;
+		
 	}
 }
 
@@ -263,17 +294,14 @@ body {font-family: "Helvetica", sans-serif;}
 
 .para-font{
 
-	font-size:15px;
+	font-size:17px;
 	margin-top: 25px;
 	margin-top: 15px;
 
 
 
 }
-.image{
 
-	border-radius: 7px;
-}
 @media only screen and (max-width: 600px){
 	.image{
 
@@ -282,4 +310,3 @@ body {font-family: "Helvetica", sans-serif;}
 		
 	}
 }
-

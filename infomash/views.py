@@ -5,3 +5,8 @@ from django.shortcuts import render
 def index(request):
 
     return render(request,"index.html")
+
+
+def technology(request):
+
+    return render(request,"technology.html")
