@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Near Fucture Technologies </title>
+  <title>top technologies-2021</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -16,25 +17,21 @@
 
   <!-- Bootstrap css -->
   <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css">
+  <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/modal-video/css/modal-video.min.css" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/modal-video/css/modal-video.min.css' %}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link rel = "stylesheet"  href="{% static 'css/index.css' %}">
 
-  <!-- =======================================================
-    Theme Name: eStartup
-    Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
+
+
 </head>
 
 <body>
@@ -43,36 +40,47 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="index.html" class="scrollto">INFOMASH</a></h1>
+        <h1><a href="/" class="scrollto">InfoMash</a></h1>
+
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index.html">Home</a></li>
+          <form style="margin-left: 10px;" action="search" method="get">
+            <p style="color: grey;">Search - Enter:</p>
+            <input style="padding: 9px; border-radius: 2px;border-width: 1px;font-size: 14px;width: 96%; font-family: monospace;" type="text" name='search' placeholder="Search top 10 ___ , Keywords Enter">
+          </form><br>
+          
+          <li class="menu-active"><a href="/">Home</a></li>
           <li class="menu-has-children"><a href="">blogs</a>
             <ul>
               <li><a href="toptechnologies.html">Top 10 Technologies</a></li>
               <li><a href="rich-persons.html">Top Billionaires in the world</a></li>
-              
+
             </ul>
           </li>
           <li><a href="#blog">About</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#" class="darkmode">Darkmode</a><li>
-          <li><a href="#" class="whitemode">Whitemode</a></li>
+          <li><a href="accounts/login">Login</a><li>
+          <li><a href="accounts/register">Signup</a></li>
+  
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
-  </header><!-- #header -->
+  </header><!-- #header --><br>
+  
 
+
+  <section id="get-started" class="padd-section text-center wow fadeInUp">
 
 <div class='container'>
 <div class="main">
-  <div class="text">
+ 
 
-    <h1 style="text-align: left;padding-bottom: 20px;font-family:helvetica;border-bottom: solid 2px;border-color: hsl(0,0%,86%);font-weight: 900;">Top 10 Technologies-2021</h1><br>
+  <h1 style="text-align: left;padding-bottom: 20px;font-family:helvetica;border-bottom: solid 2px;border-color: hsl(0,0%,86%);font-weight: bold;">Most in demand technologies in 2021</h1><br>
 
   <div>
     <h3 style="font-weight: bolder;">1. Artificial Intelligence & Machine Learning</h3>
@@ -80,7 +88,6 @@
 
     <p class="para-font">Mostly computer systems use a predetermined set of rules and instructions known as an algorithm to do a specific function.But when the concept of AI comes in there we create a general intelligence for a machine by using some different algorithmic technique. By continues training of a AI model with the  training data  , the computer starts to analyse the data which is provided in the given dataset. It creates the ability of self learning and improving by its own experience. This strategy is termed as Machine Learning. </p>
 
-    
 
     <p class="para-font">In the present AI is completely based on Machine Learning. Machine Learning in simple words training a machine using some stratergies and provide them the ability to learn and improve by its own experience. This provides intelligence for machines to do some tasks as well as interacting with human beings.We are familier with some of virtual assistants like <span style="color: blue;">Google Assistant(Google) , Siri(Apple) , Alexa(Amazon) , Cortana(Microsoft)</span> etc. These are intelligent systems which can talk to human beings. They use various types of methods like Speech Recognition,Deep Learning,Natural Language Processing(NLP),Translation etc to communicate with us. Moreover These Virtual Assistants can do a lot of things for us like answering questions,telling jokes,making remainders etc. These are all done using Machine Learning. Infact ML is a booming technology not only in the IT field but in the medical and business fields because it can predict the output of different types of medicines and helps in making new drugs. Also it can be used in <span style="color: blue;">Clinical Decision Support(CDS)</span> which helps in assisting health care providers. In business areas ML can be useful to extract consumer data and can build customer profiles. Also business mans can build chatbots which is able to interact with customers so as to handle a large number of customers at the same time these chatbots are realy useful and the customers didn't feel like they are talking with a software.</p>
   </div><br>
@@ -90,9 +97,10 @@
 
     
 
-    <p class="para-font"><span style='color:blue;'>Quantum computing</span> is a fifth generation computing method which uses quantum phenomena for the processing of data and instructions. A <span style="color: blue;">"quantum"</span> is a latin word which simply means the smallest possible unit of a physical object like electrons , photons , quarks etc. By exploiting the properties of these quanta objects it is possible to create a computer system which is millions to billion times faster and efficient than all the modern supercomputers in the world. This computer  is known as a <span style="color: blue;">Qunatum Computer.</span>A quantum computer can perform millions of computations at once. This rate is much higher than the processing speed of all the classical computers we have. The reason behind the speed of a quantum computer is because each of the binary digits are in <span style="color: blue;">Superposition</span> state. In classical computers we consider bits as the smallest storage unit but in quantum computers the smallest storage unit is called <span style="color: blue;">Qubits.</span>Each of these qubit stands in a superposition state in which each qubit contains both True(1) and False(0) values at the same time. This property of a quanta objects provides a quantum computer speed and efficieny than classical computers. </p>
+    <p class="para-font"><span style='color:blue;'>Quantum computing</span> is a fifth generation computing method which uses quantum phenomena for the processing of data and instructions. A <span style="color: blue;">"quantum"</span> is a latin word which simply means the smallest possible unit of a physical object like electrons , photons , quarks etc. By exploiting the properties of these quanta objects it is possible to create a computer system which is millions to billion times faster and efficient than all the modern supercomputers in the world. This computer  is known as a <span style="color: blue;">Quantum Computer.</span>A quantum computer can perform millions of computations at once. This rate is much higher than the processing speed of all the classical computers we have. The reason behind the speed of a quantum computer is because each of the binary digits are in <span style="color: blue;">Superposition</span> state. In classical computers we consider bits as the smallest storage unit but in quantum computers the smallest storage unit is called <span style="color: blue;">Qubits.</span>Each of these qubit stands in a superposition state in which each qubit contains both True(1) and False(0) values at the same time. This property of a quanta objects provides a quantum computer speed and efficieny than classical computers. </p>
   </div><br>
 
+                                                                                                                                                                                                              
 
   <div>
     <h3 style="font-weight: bolder;">3. Cloud Computing</h3>
@@ -105,11 +113,7 @@
   <div>
     <h3 style="font-weight: bolder;">4. Blockchain</h3>
 
-    
-
-
-
-    <p class="para-font"><span style='color:blue;'>Blockchain</span> is a decentralized and distributed technology which contains various data and information stored in certain chain of blocks which can never be owned or controlled by any centralized authority. The blockchain technology ensures security , trust and distribution of data. Each of the participans in the blockchain do have the records of the secured data and it is known as a ledger. But how the security is being ensured when it is distributed among all? is it easy to tamper the data? the simple answer is 'No' because there we have the concept of <span style="color: blue">Hashing</span>. Hashing is the technique of converting any type of data into a certain form of bits called a hashed key. This key stores the hashed data that is almost impossible to retrieve back.So if any one tries to change the data we can identify it.</p>
+    <p class="para-font"><span style='color:blue;'>Blockchain</span> is a decentralized and distributed technology which contains various data and information stored in certain chain of blocks which can never be owned or controlled by any centralized authority. The blockchain technology ensures security , trust and distribution of data. Each of the participans in the blockchain do have the records of the secured data and it is known as a ledger. But how the security is being ensured when it is distributed among all? is it easy to tamper the data? the simple answer is 'No' because there we have the concept of <span style="color: blue">Hashing</span>. Hashing is the technique of converting any type of data into a certain form of bits called a hashed key. This key stores the hashed data that is almost impossible to retrieve back.So if any one tries to change the database pattern it will affect all the blocks and we can identify that something had happend.</p>
   </div><br>
 
 
@@ -118,7 +122,7 @@
 
    
 
-    <p class="para-font">Data is the most vital thing for the technology to develop. The amount of data is increasing year by year over the internet and 90% of these data is generated in the past two years. So data is produced everywhere in the world and the management of this data itself is important. <span style="color: blue;">Big Data</span> is the field that provides the way to analyse , manage and extract huge amount of data and information. In earlier times the tech companies , buisness companies , banks , hospitals etc  only generate and work with data but in present every common internet user have their own data. For example Facebook has around 3 billion users all over the world and each of them have their own data as text , images , videos etc so it is very important to store and process these huge amount of data in an efficient manner in which the user never fails to store and fetch data from facebook or any other platform or website. There comes the significance of Data mining or Big Data and every large companies need their own data experts for analysing and managing data.</p>
+    <p class="para-font">Data is the most vital thing for the technology to develop. The amount of data is increasing year by year over the internet and 90% of these data is generated in the past two years. So data is produced everywhere in the world and the management of this data itself is important. <span style="color: blue;">Big Data</span> is the field that provides the way to analyse , manage and extract various types of data for different purposes. In earlier times the tech companies , buisness companies , banks , hospitals etc  only generate and work with data but in present every common internet user have their own data. For example Facebook has around 3 billion users all over the world and each of them have their own data as text , images , videos etc so it is realy important to store and process these bunch of data in an efficient manner in which the user never fails to store and fetch data from facebook or any other platform or web application. There comes the significance of Data mining or Big Data and every large and small companies need their own data experts for analysing and managing their data.</p>
   </div><br>
 
 
@@ -134,9 +138,7 @@
     <h3 style="font-weight: bolder;">7. DevOps</h3>
 
 
-    
-
-    <p class="para-font"><span style='color:blue;'>DevOps</span> is basically a combination of <span style="color: blue;">Development</span> and <span style="color: blue;">Operation</span> which is not actually a technology or tool but a culture which helps to implement the technology in an scalable and efficient way. For the construction of every large scale software application there are two particular teams work behind called the development team and operation team. Development team is responsible for writing code , develop new features , software testing etc and the operation team is responsible of server configuration , data backup , scaling issues , ensuring security etc. But in case of bugs occurs in the application it is not that much easy to manage if there is no sync between the development team and operation team. There come the concept of DevOps in which every person in the development and operation team should work together for the good production level.</p>
+    <p class="para-font"><span style='color:blue;'>DevOps</span> is basically a combination of <span style="color: blue;">Development</span> and <span style="color: blue;">Operation</span> which is not actually a technology or tool but a culture which helps to implement the technology in an scalable and efficient way. For the construction of every large scale software application there are two particular teams work behind called the development team and operation team. Development team is responsible for writing code , develop new features , software testing etc and the operation team is responsible of server configuration , data backup , scaling issues , ensuring security etc. But in case of bugs occurs in the application it is not that much easy to manage if there is no sync between the development team and operation team. There come the concept of DevOps in which every person in the development and operation team should focus on the entire structure of the project they are building , and work together for the good production level.</p>
   </div><br>
 
 
@@ -161,15 +163,24 @@
   
 
 
-    <p class="para-font"><span style="color: blue;">5G</span> is the fifth generation technology for broadband cellular networks. 3G and 4G were the greatest technologies allow us to browse over the internet , download data from internet , watching movies and so on. But 5G services will be a revolutionary technology which helps to explore more in the world of internet. On the arrival of 5G , most of the services move towards the cloud. Why because the data can be easily accessed and manipulated using cloud servers and 5G network.   </p>
-  </div><br>
+    <p class="para-font">The last but not least technology in our list is 5G.<span style="color: blue;">5G</span> is the fifth generation technology for broadband cellular networks. 3G and 4G were the greatest technologies allow us to browse over the internet , download data from internet , watching movies and so on. But 5G services will be a revolutionary technology which helps to explore more in the world of internet. On the arrival of 5G , most of the services move towards the cloud. Why because the data can be easily accessed and manipulated using cloud servers and 5G network.</p>
+  </div><br><br><br><br>
+
 
 
   
 </div>
 </div>
-</div>
-<br><br><br><br><br>
+  </section>
+
+
+
+
+  
+
+  <!--==========================
+    Footer
+  ============================-->
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -182,44 +193,41 @@
 
             <ul class="list-unstyled">
               <li><a href="#">About us</a></li>
-              <li><a href="#">Features item</a></li>
-              <li><a href="#">Live streaming</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Contact</a></li>
               <li><a href="#">Privacy Policy</a></li>
             </ul>
-
           </div>
         </div>
-
       </div>
-      <h2>©</h2><p>Copyrights reserved Infomash 2021</p>
+       <h2>©</h2><p>Copyrights reserved Infomash 2021</p>
     </div>
-
-
   </footer>
 
 
 
- 
+
+
 
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/modal-video/js/modal-video.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
+  <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+  <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/modal-video/js/modal-video.js' %}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'lib/wow/wow.min.js' %}"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <script src="{% static 'contactform/contactform.js' %}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-   <script src="js/index.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/index.js' %}"></script>
 
 </body>
 </html>

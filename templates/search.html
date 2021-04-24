@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+
+  <div style="margin-left: 30px;text-align: justify;padding: 30px;">
+    <h1 style="text-align: left;font-family:monospace;">Search results:{{results}} {{search}}</h1><br>
+    <a href="{{search_data.title}}"><h3 style="color: dodgerblue;text-align: left;">{{search_data.search_head}}</h3><br>
+    <a href="{{search_data.slug}}"><h5 style="text-align: left;color:dodgerblue;">{{search_data.title}}</h5></a><br>
+    <p style="text-align: left;">{{search_data.blog}}</p>
+    <p style="text-align: left;">{{summary}}</p>
+  </div>
+
+{% endblock %}

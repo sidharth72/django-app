@@ -9,6 +9,11 @@
 # General
 --------------------------------------------------------------*/
 
+body{
+
+  background-color: hsl(0,0%,99%);
+}
+
 
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   color: #000;
-  font-weight: 600;
+
 }
 
 h4 {
@@ -36,7 +41,7 @@ h5 {
 }
 
 a {
-  letter-spacing: 2px;
+
   text-decoration: none;
 }
 
@@ -53,13 +58,6 @@ li {
   text-transform: capitalize;
 }
 
-p {
-  color: #505050;
-  font-weight: 300;
-  letter-spacing: 0px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
 
 
 
@@ -67,7 +65,7 @@ p {
   height: 200px;
   margin-bottom: 30px;
   width: 250px;
-
+  border-radius: 1px;
 }
 
 .container-full {
@@ -75,20 +73,6 @@ p {
   padding-right: 0;
 }
 
-.btn {
-  border: 1px solid #fff;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 15px 40px;
-  text-transform: uppercase;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
-}
 
 .btn-default:hover {
   color: #fff;
@@ -104,7 +88,7 @@ p {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #71c55d;
+  background: #003399;
   line-height: 1;
   color: #fff;
   padding: 7px 12px 13px 12px;
@@ -122,13 +106,13 @@ p {
 }
 
 .back-to-top:focus {
-  background: #71c55d;
+  background: #0000ff;
   color: #fff;
   outline: none;
 }
 
 .back-to-top:hover {
-  background: #55b03f;
+  background: #0000ff;
   color: #fff;
 }
 
@@ -136,43 +120,38 @@ p {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: mediumseagreen;
+  background-image: linear-gradient(to right,#003399,#3366cc);
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
-  height: 50px;
+  height: 48px;
+  z-index: 3;
+  transition: all 0.5s ease;
+  opacity: 1;
 
+ 
 }
-
 
 #header #logo {
   padding: 6px 0 0 0;
 }
 
 #header #logo h1 {
-  color: white;
+  color: grey;
   font-family: helvetica;
   font-size: 30px;
   font-weight: bolder;
-  margin-left: 10px;
+  margin: 0;
 }
 
 #header #logo h1 a {
-  color: white;
+  color: hsl(0,0%,100%);
   line-height: 1;
   display: inline-block;
   text-decoration: none;
-  font-weight: bolder;
-  letter-spacing: 1px;
-}
-@media (max-width:600px){
-  #header #logo h1 a{
-    color:grey;
-  }
-  #header{
-    background-color: white;
-  }
+  font-weight:900;
+
 }
 
 #header #logo h1 a span {
@@ -233,6 +212,15 @@ p {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
+  }
+  #header{
+
+    background-image: linear-gradient(to right,white,white)
+
+  }
+  #header #logo h1 a{
+
+    color: mediumseagreen;
   }
 }
 
@@ -426,25 +414,21 @@ p {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 669;
+  z-index: 999;
   margin: 4px 20px 0 0;
   border: 0;
   background: none;
-  font-size: 15px;
+  font-size: 24px;
   display: none;
-
-
-  
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;
 }
 
 #mobile-nav-toggle i {
-  color: white;
+  color: hsl(0,0%,100%);
   font-size: 24px;
-}
-@media (max-width:600px){
-  #mobile-nav-toggle i{
-    color:black;
-  }
+  font-weight: 100;
 }
 
 @media (max-width: 1024px) {
@@ -478,7 +462,7 @@ p {
 }
 
 #mobile-nav ul li a {
-  color: black;
+  color: grey;
   font-size: 14px;
   overflow: hidden;
   padding: 6px 22px 6px 15px;
@@ -544,7 +528,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 --------------------------------------------------------------*/
 .padd-section {
   padding-bottom: 80px;
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 @media (max-width: 992px) {
@@ -606,9 +590,10 @@ body.mobile-nav-active #mobile-nav-toggle i {
   }
 }
 
-#get-started .feature-block:hover {
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+#get-started .feature-block {
+  ;
   transition: all 0.5s ease-in-out 0s;
+  border-radius: 20px;
 }
 
 #get-started .feature-block a {
@@ -1318,25 +1303,17 @@ body.mobile-nav-active #mobile-nav-toggle i {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  background:white;
-  padding-top: 20px;
+  background: white;
+  padding-top: 70px;
 }
 .footer .container{
 
   background-color: white;
-
   
 }
 
-
-.footer .container p{
-
-  padding-bottom: 40px;
-  height: 100%;
-}
-
-/*.footer .footer-logo .navbar-brand {
-  color: #fff;
+.footer .footer-logo .navbar-brand {
+  color: black;
   display: inline-block;
   float: none;
   font-family: "Philosopher", sans-serif;
@@ -1346,29 +1323,29 @@ body.mobile-nav-active #mobile-nav-toggle i {
   letter-spacing: 0.2em;
   padding-left: 0;
   padding-top: 0;
-}*/
+}
 
 .footer .footer-logo p {
-  color: #fff;
+  color: black;
   font-size: 12px;
   letter-spacing: 1px;
 }
 
 .footer .list-menu > h4 {
-  color:dodgerblue;
+  color: black;
   padding-bottom: 20px;
 }
 
 .footer .list-menu ul li a {
-  color:steelblue;
-  font-size: 15px;
+  color: dodgerblue;
+  font-size: 12px;
   padding-left: 5px;
   text-decoration: none;
   letter-spacing: 0;
 }
 
 .footer .copyrights {
-  background: dodgerblue;
+  background: black;
   margin-top: 50px;
   text-align: center;
   padding: 25px;
@@ -1398,5 +1375,5 @@ body.mobile-nav-active #mobile-nav-toggle i {
 .footer .container p{
    color:black;
    text-align: center;
-   padding-bottom: 40px;
+   padding-bottom: 0px;
 }

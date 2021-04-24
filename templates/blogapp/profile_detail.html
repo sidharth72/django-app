@@ -1,0 +1,139 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+		{% if user.is_authenticated %}
+
+ 
+	
+			<div class="content-section">
+				<div class="media">
+             <img src="{{profile.profile_img.url}}" class="rounded-circle z-depth-2 account-image center" height="100" width="100">
+					<div  class="media-body">
+						<h4 style="color: #006666; margin-left: 20px;" class="account-heading">{{profile.user}}</h4>
+						<p style="margin-left: 20px;" class="text-secondary">example text to build on the card title and make up the bulk of the card's content</p>
+
+                        <!--Edit profile -->
+
+                        <button style="margin-left: 20px;" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalLong">Edit profile</button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit profile</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+
+                                            <form>
+                                              <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                  <label for="inputEmail4">Email</label>
+                                                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                  <label for="inputPassword4">Password</label>
+                                                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label for="inputAddress">Firstname</label>
+                                                <input type="text" class="form-control" id="inputAddress" >
+                                              </div>
+
+                                             <div class="form-group">
+                                                <label for="inputAddress">Lastname</label>
+                                                <input type="text" class="form-control" id="inputAddress" >
+                                              </div>
+
+                                            <div class="form-group">
+                                                <label for="inputAddress">Username</label>
+                                                <input id='username-profile-reg' type="text" class="form-control" id="inputAddress" >
+                                                <p id="username-profile-val"></p>
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Description</label>
+                                              <textarea placeholder="Description" class="form-control">
+                                              </textarea>
+                                                </div>
+
+
+                                                <div class="form-group col-md-4">
+                                                  <label for="inputState">Blog category</label>
+                                                  <select id="inputState" class="form-control">
+                                                    <option selected>Technology</option>
+                                                    <option selected>Business</option>
+                                                    <option selected>Lifestyle</option>
+                                                  </select>
+                                                </div>
+
+             
+                                              <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                  <label for="inputCity">City</label>
+                                                  <input type="text" class="form-control" id="inputCity">
+                                                </div>
+
+
+                                                <div class="form-group col-md-4">
+                                                  <label for="inputState">State</label>
+                                                  <select id="inputState" class="form-control">
+                                                    <option selected>thamilnadu</option>
+                                                    <option selected>Kerala</option>
+                                                    <option selected>goa</option>
+                                                    <option selected>maharasthra</option>
+                                                    <option selected>punjab</option>
+                                                  </select>
+                                                </div>
+                         
+                         
+                                              </div>
+                                              <div class="form-group">
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                  <label class="form-check-label" for="gridCheck">
+                                                    Check me out
+                                                  </label>
+                                                </div>
+                                              </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-outline-primary">Save changes</button>
+                                        </div>
+                                    </form>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+	
+					</div>
+				</div>
+
+				<br><br>
+
+
+
+				<div class="container">
+					<div class="row">
+
+				
+      
+
+        			</div>
+        		</div>
+
+
+
+
+        {% else %}
+        
+        {% endif %}
+
+
+{% endblock %}

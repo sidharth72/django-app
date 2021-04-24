@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+		<div>
+
+		<img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{object.img.url}}" alt="image">
+		</div>
+
+
+          <div class="item mb-5">
+            <div class="media">
+              <div class="media-body">
+                <h3 class="title mb-1"><a href="#">{{object.title}}</a></h3>
+                <div class="meta mb-1"><span class="date">{{object.timestamp}}</span><span class="time">5 min read</span><span class="comment"><a href="#">8 comments</a></span></div>
+                <div style="color:#006666; font-size: 20px; font-weight: 500; line-height: 2;text-align: justify;">{{object.blog}}</div>
+            
+              </div><!--//media-body-->
+            </div><!--//media-->
+          </div><!--//item-->
+
+
+
+{% endblock %}

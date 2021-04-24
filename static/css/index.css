@@ -1,25 +1,27 @@
-
 @charset "UTF-8";
 
 
 
+.navbar{
 
+	background-color: indigo;
+	position: fixed;
+	width:100%;
+	top:0;
+	padding:6px;
+	float: all;
 
-@media (max-width: 600px){
-	.form-control{
-
-		display: none;
-		max-width: 120px;
-
-	}
+	
 }
+
+
 
 .web-name{
 
 
 	font-size:30px;
 	font-weight: 600;
-	color: white;
+	color: grey;
 	text-shadow: 1px 1px 1px hsl(0,0%,85%);
 	
 	
@@ -54,29 +56,6 @@
 
 }
 
-#customers {
-	font-family: Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-  }
-  
-  #customers td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color:white;
-	color:black;
-  }
-
 #head{
 
 	color:dodgerblue;
@@ -86,21 +65,7 @@
 
 }
 
-.btn-primary{
 
-	margin-left: 20px;
-	border-radius: 10px;
-}
-
-
-
-.btn.btn-primary{
-
-	background-color:white;
-	color:rgba(40, 58, 90, 0.9);
-	font-weight: bolder;
-	border-radius:15px; 
-}
 #items{
 
 	color:black;
@@ -125,6 +90,7 @@
 	font-weight: 400;
 	border-style: solid;
 	border-radius:20px;
+	border-width: 2px;
 	border-color: white;
 	padding-left: 20px;
 	padding-right: 20px;
@@ -141,14 +107,49 @@
 
 }
 
+#login-button{
+
+	position: absolute;
+	align-items: right;
+	right: 0;
+	margin-top: 7px;
+	margin-right: 20px;
+}
+
+#dropdownMenuButton{
+
+	position: absolute;
+	align-items: right;
+	right: 0;
+	margin-right: 150px;
+	margin-top: 7px;
+	color: white;
+	padding-left: 30px;
+	padding-right: 30px;
+	
+}
 
 
 
-@media (max-width: 700px){
+
+@media (max-width: 760px){
 	#items{
 
 		display:none;
 	}
+	#dropdownMenuButton{
+
+		position: absolute;
+		align-items: right;
+		right: 0;
+		margin-right: 65px;
+		margin-top: 7px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+	
+	}
+
 }
 @media (max-width: 700px){
 	.item{
@@ -170,7 +171,7 @@
 
 	color: black;
 }
-@media (min-width: 700px){
+@media (min-width: 1024px){
 
 	.glyphicon.glyphicon-align-justify{
 
@@ -179,6 +180,24 @@
 	#search-icon{
 
 		display: none;
+	}
+	.main{
+
+		margin-right: 300px;
+	}
+	.para-font{
+
+		padding: 8px;
+	}
+	#login-button{
+
+		position: absolute;
+		align-items: right;
+		right: 0;
+		padding-left: 60px;
+		padding-right: 60px;
+		margin-top: 7px;
+		margin-right: 20px;
 	}
 }
 
@@ -190,10 +209,11 @@
 
 
 
-.container .main{
+.container{
 
-	width: 70%;
-
+	background-color: hsl(0,0%,100%);
+	text-align: left;
+	
 }
 
 body {font-family: "Helvetica", sans-serif;}
@@ -228,19 +248,21 @@ body {font-family: "Helvetica", sans-serif;}
 }
 
 .main {
-  margin-left: 10px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
-  margin-top: 60px;
+  margin-left: 5px; /* Same as the width of the sidenav */
+  padding: 25px;
+  margin-top: 5px;
+  box-shadow: 5px 8px 35px hsl(0,0%,90%);
+
 }
 
-@media (max-width: 600px){
+@media (max-width: 700px){
 
-	.container .main{
+	.sidebar{
 
-		width: 100%;
-	}
+		display: none;
 }
 
+}
 
 
 
@@ -249,6 +271,8 @@ body {font-family: "Helvetica", sans-serif;}
 	.main{
 
 		margin-left: 10px;
+
+		
 	}
 }
 
@@ -258,7 +282,6 @@ body {font-family: "Helvetica", sans-serif;}
 	.text{
 
 		padding:2px;
-		
 	}
 }
 
@@ -284,13 +307,21 @@ body {font-family: "Helvetica", sans-serif;}
 
 .para-font{
 
-	font-size:17px;
-	margin-top: 25px;
-	margin-top: 15px;
+	font-size:20px;
+	margin-top: 5px;
+	text-align: justify;
+	font-weight: normal;
 
 
 
 }
+.image{
+
+	border-radius: 7px;
+}
+
+
+
 
 @media only screen and (max-width: 600px){
 	.image{
@@ -299,4 +330,62 @@ body {font-family: "Helvetica", sans-serif;}
 		width: 300px;
 		
 	}
+
+}
+
+#form{
+
+	box-shadow: 8px 8px 10px hsl(0,0%,85%); 
+	margin-left: 60px;
+
+
+
+}
+
+#form p{
+
+	padding:20px;
+	color:white;
+}
+
+@media only screen and (min-width: 1000px){
+	.content-section{
+
+		margin-left: 30px;
+		margin-top: 1px;
+
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.content-section img{
+
+
+		margin-top: 30px;
+
+		height: 100px;
+		width: 97px;
+	}
+	.content-section{
+
+		margin-left: 10px;
+	}
+	.account-heading{
+
+		font-size: 25px;
+
+	}
+}
+
+
+.media-body{
+
+	padding:30px;
+
+}
+.account-heading{
+
+	margin-top: 1px;
+	color:black;
+	font-weight: 900;
 }
