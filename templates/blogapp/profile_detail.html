@@ -1,139 +1,205 @@
-{% extends 'index.html' %}
-
-{% block content %}
-
-		{% if user.is_authenticated %}
-
- 
-	
-			<div class="content-section">
-				<div class="media">
-             <img src="{{profile.profile_img.url}}" class="rounded-circle z-depth-2 account-image center" height="100" width="100">
-					<div  class="media-body">
-						<h4 style="color: #006666; margin-left: 20px;" class="account-heading">{{profile.user}}</h4>
-						<p style="margin-left: 20px;" class="text-secondary">example text to build on the card title and make up the bulk of the card's content</p>
-
-                        <!--Edit profile -->
-
-                        <button style="margin-left: 20px;" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalLong">Edit profile</button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                  <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">Edit profile</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                      </div>
-                                      <div class="modal-body">
-
-                                            <form>
-                                              <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                  <label for="inputEmail4">Email</label>
-                                                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                  <label for="inputPassword4">Password</label>
-                                                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                                </div>
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="inputAddress">Firstname</label>
-                                                <input type="text" class="form-control" id="inputAddress" >
-                                              </div>
-
-                                             <div class="form-group">
-                                                <label for="inputAddress">Lastname</label>
-                                                <input type="text" class="form-control" id="inputAddress" >
-                                              </div>
-
-                                            <div class="form-group">
-                                                <label for="inputAddress">Username</label>
-                                                <input id='username-profile-reg' type="text" class="form-control" id="inputAddress" >
-                                                <p id="username-profile-val"></p>
-                                              </div>
-                                              <div class="form-group">
-                                                <label>Description</label>
-                                              <textarea placeholder="Description" class="form-control">
-                                              </textarea>
-                                                </div>
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>User Profile</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+  
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="{% static 'css/theme-1.css' %}">
 
 
-                                                <div class="form-group col-md-4">
-                                                  <label for="inputState">Blog category</label>
-                                                  <select id="inputState" class="form-control">
-                                                    <option selected>Technology</option>
-                                                    <option selected>Business</option>
-                                                    <option selected>Lifestyle</option>
-                                                  </select>
-                                                </div>
+</head> 
 
-             
-                                              <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                  <label for="inputCity">City</label>
-                                                  <input type="text" class="form-control" id="inputCity">
-                                                </div>
+<body>
 
 
-                                                <div class="form-group col-md-4">
-                                                  <label for="inputState">State</label>
-                                                  <select id="inputState" class="form-control">
-                                                    <option selected>thamilnadu</option>
-                                                    <option selected>Kerala</option>
-                                                    <option selected>goa</option>
-                                                    <option selected>maharasthra</option>
-                                                    <option selected>punjab</option>
-                                                  </select>
-                                                </div>
-                         
-                         
-                                              </div>
-                                              <div class="form-group">
-                                                <div class="form-check">
-                                                  <input class="form-check-input" type="checkbox" id="gridCheck">
-                                                  <label class="form-check-label" for="gridCheck">
-                                                    Check me out
-                                                  </label>
-                                                </div>
-                                              </div>
-
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-outline-primary">Save changes</button>
-                                        </div>
-                                    </form>
-                                        
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-	
-					</div>
-				</div>
-
-				<br><br>
-
-
-
-				<div class="container">
-					<div class="row">
-
-				
-      
-
-        			</div>
-        		</div>
-
-
-
-
-        {% else %}
+    
+  <header class="header text-center">     
+      <h1 class="blog-name pt-lg-4 mb-0"><a style="font-family: cursive;" href="#">Blogosphere</a></h1>
         
-        {% endif %}
+      <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navigation" class="collapse navbar-collapse flex-column" >
+        <div class="profile-section pt-3 pt-lg-0">
+
+          
+          <ul class="social-list list-inline py-3 mx-auto">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+   
+        </ul>
+   
+              <hr> 
+        </div><!--//profile-section-->
+        
+        <ul class="navbar-nav flex-column text-left">
+        
+          {% if user.is_authenticated %}
 
 
-{% endblock %}
+          <img style="display: block;margin-left: auto;margin-right: auto;" src="{{profile.profile_img.url}}" class="rounded-circle z-depth-2 account-image center" height="100" width="100"><br>
+
+
+          <li class="nav-item">
+              <h5 class="nav-link" style="text-align: center;color:#333333;font-weight: 500;">{{user.first_name}} {{user.last_name}}</h5>
+          </li>
+
+
+
+          <li class="nav-item">
+              <h5><a style="font-size: 15px;" class="nav-link" href="editprofile/{{profile.uuid}}">Edit profile</a></h5>
+          </li>
+
+           <li class="nav-item">
+              <h5><a style="font-size: 15px;" class="nav-link" href="">Create a blog</a></h5>
+          </li>
+
+    
+     
+        
+        <li class="nav-item">
+          <h5><a style="font-size: 15px;" class="nav-link" href="/logout">Logout</a></h5>
+      </li>
+
+
+          {% endif %}
+
+      </ul>
+
+      </div>
+    </nav>
+    </header>
+    
+    <div class="main-wrapper">
+     
+      <section class="blog-list px-3 py-5 p-md-5">
+
+        <div class="container text-center">
+   
+         <form action="/search" method="get">
+                  
+                        <input type="text" id="semail" name="search" class="form-control mr-md-1 semail" placeholder="Search blogs , keywords hit enter..">
+                    
+                </form>
+        </div><!--//container-->
+
+          <br>
+
+        <div class="container">
+      <div class="content-section">
+
+
+
+
+
+        <h3 style="font-weight: 300;">My Posts</h3><br>
+
+        <div class="container">
+          {% if profile.post.all %}
+            {% for data in profile.post.all %}
+          
+            
+          <div  style="box-shadow: 6px 6px 30px hsl(0,0%,87%);padding: 20px;" class="item mb-5">
+            <div class="media">
+              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{data.img.url}}" alt="image">
+              <div class="media-body">
+                <h3 class="title mb-1"><a style="color: #333333;" href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h3>
+                <div class="meta mb-1"><span class="date">{{data.timestamp}}</span><span class="time">5 min read</span><span class="comment"><a href="#">{{profile.user}}</a></span></div>
+    
+             
+            
+                <a class="more-link" href="{% url 'blogapp:postdetail' data.pk %}">Read more &rarr;</a>
+              </div><!--//media-body-->
+            </div><!--//media-->
+          </div><!--//item-->
+            {% endfor %}
+            {% else %}
+            <p style="font-weight: 500;text-align: center;">You have no posts yet.</p>
+            {% endif %}
+
+            <br>
+
+
+
+
+
+            <h3 style="font-weight: 300;">Public Posts</h3><br>
+
+            {% for data in posts %}
+
+            <div  style=";padding: 20px;" class="item mb-5">
+            <div class="media">
+              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{data.img.url}}" alt="image">
+              <div class="media-body">
+                <h3 class="title mb-1"><a href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h3>
+                <div class="meta mb-1"><span class="date">{{data.timestamp}}</span><span class="time">5 min read</span><span class="comment"><a href="#">{{profile.post.user.first_name}}</a></span></div>
+               
+       
+
+              
+                <a class="more-link" href="{% url 'blogapp:postdetail' data.pk %}">Read.&rarr;</a>
+              </div><!--//media-body-->
+            </div><!--//media-->
+          </div><!--//item-->
+          {% endfor %}
+            </div>
+          
+
+        </div>
+
+        </div>
+        {% block content %}
+
+        {% endblock %}
+      </section>
+
+      
+      <footer class="footer text-center py-2 theme-bg-dark">
+       
+          <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+       
+      </footer>
+    
+    </div><!--//main-wrapper-->
+    
+    
+    
+    
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->  
+
+
+    
+       
+    <!-- Javascript -->          
+    <script src="{% static 'plugins/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'plugins/popper.min.js' %}"></script> 
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script> 
+
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="{% static 'js/demo/style-switcher.js' %}"></script>     
+    
+
+</body>
+</html> 
+
+
+
+

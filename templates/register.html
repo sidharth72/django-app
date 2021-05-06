@@ -1,36 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Signup</title>
+
+    </head>
+
 {% extends 'index.html' %}
 
 {% block content %}
 
 
-  <div class="reg-form">
+  <div class="reg-form" style='width: auto;box-shadow: 5px 5px 50px hsl(0,0%,90%);padding-top: 25px;padding-bottom: 25px;'>
     <form id='register-form' action="register" method="post">
       {% csrf_token %}
       <div class="container">
-        <h1 style="font-weight: bolder;">Create Account</h1>
+        <h1 style="font-weight: bolder;color: mediumseagreen;">Create Account</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
 
 
-          <label for="psw"><b>First name</b></label>
-          <input class='form-control' type="text" placeholder="Enter firstname" name="first_name"  required>
+          <label for="psw"><b style="color: grey;font-weight: 500;font-size: 17px;">First name</b></label>
+          <input  style="border-radius: 0px;" class='form-control' type="text" placeholder="Enter firstname" name="first_name"  required>
 
 
-          <label for="psw"><b>Last name</b></label>
-          <input class='form-control' type="text" placeholder="Enter lastname(optional)" name="last_name">
+          <label for="psw"><b style="color: grey;font-weight: 500;font-size: 17px;">Last name</b></label>
+          <input  style="border-radius: 0px;" class='form-control' type="text" placeholder="Enter lastname" name="last_name">
 
-          <label for="psw"><b>Username or Email</b></label>
-          <input class='form-control' type="text" placeholder="Enter Username or Email" name="username" id="username-reg" required>
+          <label for="psw"><b style="color: grey;font-weight: 500;font-size: 17px;">Email</b></label>
+          <input  style="border-radius: 0px;" class='form-control' type="text" placeholder="Enter Your Email" name="username" id="username-reg" required>
 
           <p id="username-val"></p>
   
 
-          <label for="psw"><b>Password</b></label>
-          <input class='form-control' type="password" placeholder="Enter Password" name="password1" id="password-reg" required>
+          <label for="psw"><b style="color: grey;font-weight: 500;font-size: 17px;">Password</b></label>
+          <input  style="border-radius: 0px;" class='form-control' type="password" placeholder="Type Password" name="password1" id="password-reg" required>
           <p id="result"></p>
 
-          <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input class='form-control' type="password" placeholder="Repeat Password" name="password2" id="psw-repeat" required>
+          <label for="psw-repeat"><b style="color: grey;font-weight: 500;font-size: 17px;">Repeat Password</b></label>
+          <input  style="border-radius: 0px;" class='form-control' type="password" placeholder="Repeat Password" name="password2" id="psw-repeat" required>
         <hr>
         {% for message in messages %}
         <p style="font-size: 17px;font-weight: bold;color: tomato;">{{message}}</p>

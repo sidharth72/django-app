@@ -3,12 +3,24 @@
 {% block content %}
 
 
-  <div style="margin-left: 30px;text-align: justify;padding: 30px;">
-    <h1 style="text-align: left;font-family:monospace;">Search results:{{results}} {{search}}</h1><br>
-    <a href="{{search_data.title}}"><h3 style="color: dodgerblue;text-align: left;">{{search_data.search_head}}</h3><br>
-    <a href="{{search_data.slug}}"><h5 style="text-align: left;color:dodgerblue;">{{search_data.title}}</h5></a><br>
-    <p style="text-align: left;">{{search_data.blog}}</p>
-    <p style="text-align: left;">{{summary}}</p>
+
+<div class="card">
+  <div class="card-header">
+    Search results:{{results}} {{search}}
   </div>
+
+  <div class="card-body">
+{% for search_data in search_datas %}
+
+{% if search in search_data.title or search in search_data.blog %}
+    <br>
+    <a style="font-size: 30px;font-weight: 600px;" href="{% url 'blogapp:postdetail' search_data.pk %}" class="card-title">{{search_data.title}}</a><br><br>
+    <p class="card-text">{{search_data.blog|safe|truncatewords:50}}<a href="{% url 'blogapp:postdetail' search_data.pk %}">. . . .Read more</a></p>
+{% endif %}
+{% endfor %}
+ 
+  </div>
+</div>
+
 
 {% endblock %}

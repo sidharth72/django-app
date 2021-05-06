@@ -1,38 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Signin</title>
+
+    </head>
+
 {% extends 'index.html' %}
 
 {% block content %}
 
-
+  <div style='width: auto;box-shadow: 5px 5px 50px hsl(0,0%,90%);padding-top: 25px;padding-bottom: 25px;'>
     <form id='login-form' action="login" method="post">
       {% csrf_token %}
       <div class="container">
-        <h1 style="font-weight: bolder;">Login</h1>
+        <a href="register" style="position: absolute;right: 0;align-items: right;margin-right:40px;font-size: 14px;">Sign up insted</a>
+        <h1 style="font-weight: bolder;color: hsl(0,0%,20%);">Sign-in</h1>
+
         <hr>
 
           <!--<label for="psw"><b>Username or email</b></label>
           <input type="text" placeholder="Enter Usename" name="username" id="psw" required>-->
   
 
-          <label for="email"><b>Username or Email</b></label>
-          <input class="form-control" type="text" placeholder="Enter Username" name="login_username" id="email">
+          <label for="email"><b>Email</b></label>
+          <input style="border-radius: 0px;padding: 25px;background-color: hsl(0,0%,90%);" class="form-control" type="text" placeholder="Enter Email" name="login_username" id="email">
 
 
           <label for="psw"><b>Password</b></label>
-          <input class="form-control" type="password" placeholder="Enter Password" name="login_password" id="password" required>
+          <input style="border-radius: 0px;padding: 25px;background-color: hsl(0,0%,90%);" class="form-control" type="password" placeholder="Enter Password" name="login_password" id="password" required>
 
         <hr>
         {% for message in messages %}
-        <p style="font-size: 17px;font-weight: bold;color: tomato;">{{message}}</p>
+        <p style="font-size: 20px;font-weight: 500;color: tomato;">{{message}}</p>
         {% endfor %}
+
    
         <button type="submit" class="btn btn-primary">Login</button>
-        </div>
+        </div><br><br>
 
   <div class="container signin">
     <p>Dont have an account yet? <a href="register">Signup</a>.</p>
   </div>
 </form>
+</div>
 
 
 
 {% endblock %}
+
+</html>

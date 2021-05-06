@@ -1,26 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Public Posts</title>
+
+    </head>
 {% extends 'index.html' %}
 
+
+
 {% block content %}
+
 
 {% for i in object_list %}
 
 
-
-
-          <div class="item mb-5">
+          <div style="box-shadow: 6px 6px 30px hsl(0,0%,90%);padding: 20px;" class="item mb-5">
             <div class="media">
-              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/blog/blog-post-thumb-1.jpg" alt="image">
+
+              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{i.img.url}}" alt="image">
+
               <div class="media-body">
-                <h3 class="title mb-1"><a href="{% url 'blogapp:postdetail' i.pk %}">{{i.title}}</a></h3>
-                <div class="meta mb-1"><span class="date">{{i.timestamp}}</span><span class="time">5 min read</span><span class="comment"><a href="#">{{profile.user}}</a></span></div>
-                <div class="intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies...</div>
-                <a class="more-link" href="blog-post.html">Read more &rarr;</a>
+                <h3 style="font-weight: 500;color: #202124;" class="title mb-1"><a href="{% url 'blogapp:postdetail' i.pk %}">{{i.title}}</a></h3>
+                <div class="meta mb-1"><span class="date">{{i.timestamp}}</span><span class="time"></span><span id='likes_id' class="comment"><a href="#">{{i.likes}} likes</a></span></div>
+                
+            
+                <div class="intro">{{i.blog|safe}}</div>
+        
               </div><!--//media-body-->
             </div><!--//media-->
           </div><!--//item-->
 
 
-
-
 {% endfor %}
+
+
 {% endblock %}
+ 
+</html>

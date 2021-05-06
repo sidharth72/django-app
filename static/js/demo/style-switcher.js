@@ -10,7 +10,8 @@ $(document).ready(function() {
       if (password.length < 6) { 
         $('#result').removeClass(); 
         $('#result').addClass('short');
-        $("#result").css("color","tomato");  
+        $("#result").css("color","tomato");
+        $('#password-reg').css('border-color','tomato');  
         return 'Too short' 
       }if (password.length > 7){ 
         strength += 1
@@ -31,17 +32,20 @@ $(document).ready(function() {
       if (strength < 2 ) { 
         $('#result').removeClass();
         $('#result').text('Password is too weak! add symbols , letters and numbers')
-        $("#result").css("color","tomato"); 
+        $("#result").css("color","tomato");
+        $('#password-reg').css('border-color','tomato'); 
         return 'Password is weak! add symbols , letters and numbers' 
       } else if (strength == 2 ) { 
         $('#result').removeClass() 
         $('#result').text('good')
-        $("#result").css("color","orange");  
+        $("#result").css("color","orange");
+        $('#password-reg').css('border-color','orange');  
         return 'Good' 
       } else{ 
         $('#result').removeClass() 
         $('#result').text('strong') 
-        $("#result").css("color","mediumseagreen"); 
+        $("#result").css("color","mediumseagreen");
+        $('#password-reg').css('border-color','mediumseagreen'); 
         return 'Strong!' 
       }
 
@@ -73,14 +77,33 @@ $(document).ready(function(){
       $('#username-val').text("Username " + "'" +name+ "'" + " not available")
       $("#username-val").css('color','tomato');
       $('#username-val').fadeIn()
+      $("#username-reg").css('border-color','tomato')
 
     }
     else{
 
       $('#username-val').text("Available")
       $("#username-val").css('color','mediumseagreen')
+      $("#username-reg").css('border-color','mediumseagreen')
       
 
     } 
   })
 })
+
+
+function onClick(){
+
+  var i = document.getElementById('likes_id').value
+  $.ajax({
+    
+      url:'/ajax/likes/',
+      data:{'i':i},
+      dataType:'json',
+      success:function(data){
+        document.getElementById('like').innerHTML = data.i
+
+      }
+    })
+}
+
