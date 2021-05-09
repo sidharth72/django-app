@@ -13,8 +13,8 @@
 {% for search_data in search_datas %}
 
 {% if search in search_data.title or search in search_data.blog %}
-    <br>
-    <a style="font-size: 30px;font-weight: 600px;" href="{% url 'blogapp:postdetail' search_data.pk %}" class="card-title">{{search_data.title}}</a><br><br>
+
+    <a style="font-size: 20px;font-weight: 600px;color: teal;" href="{% url 'blogapp:postdetail' search_data.pk %}" class="card-title">{{search_data.title}}</a><br><br>
     <p class="card-text">{{search_data.blog|safe|truncatewords:50}}<a href="{% url 'blogapp:postdetail' search_data.pk %}">. . . .Read more</a></p>
 {% endif %}
 {% endfor %}

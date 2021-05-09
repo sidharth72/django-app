@@ -18,14 +18,14 @@
           <div style="box-shadow: 6px 6px 30px hsl(0,0%,90%);padding: 20px;" class="item mb-5">
             <div class="media">
 
-              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{i.img.url}}" alt="image">
+              <!--<img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{i.img.url}}" alt="image">-->
 
               <div class="media-body">
                 <h3 style="font-weight: 500;color: #202124;" class="title mb-1"><a href="{% url 'blogapp:postdetail' i.pk %}">{{i.title}}</a></h3>
                 <div class="meta mb-1"><span class="date">{{i.timestamp}}</span><span class="time"></span><span id='likes_id' class="comment"><a href="#">{{i.likes}} likes</a></span></div>
                 
             
-                <div class="intro">{{i.blog|safe}}</div>
+                <div class="intro">{{i.intro|safe}}<a href="{% url 'blogapp:postdetail' i.pk %}">...Read more</a></div>
         
               </div><!--//media-body-->
             </div><!--//media-->

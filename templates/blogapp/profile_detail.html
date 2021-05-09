@@ -93,72 +93,83 @@
 
         <div class="container text-center">
    
-         <form action="/search" method="get">
+         <form method="get">
                   
-                        <input type="text" id="semail" name="search" class="form-control mr-md-1 semail" placeholder="Search blogs , keywords hit enter..">
+          <input type="text" id="search_input" name="search" class="form-control mr-md-1 semail" placeholder="Search blogs , keywords hit enter..">
                     
-                </form>
+          </form>
         </div><!--//container-->
 
-          <br>
 
         <div class="container">
       <div class="content-section">
+      
+        <div style="border: solid white;" id = 'search_box' class="card">
+          <!--<div class="card-header">
+    
+            Search results:{{results}} {{request.GET.search}}
+          
+          </div>-->
+        
+          <div class="card-body">
+            {% for post in posts %}
+            {% if request.GET.search in post.title or request.GET.search in post.blog %}
 
-
-
+            <br>
+            <a style="font-size: 20px;color: blue;" href="{% url 'blogapp:postdetail' post.pk %}" class="card-title">{{post.title}}</a><br>
+            <p class="card-text">{{post.blog|safe|truncatewords:50}}<a href="{% url 'blogapp:postdetail' post.pk %}">. . . .Read more</a></p>
+         
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+    
+        <br>
 
 
         <h3 style="font-weight: 300;">My Posts</h3><br>
+        
 
         <div class="container">
           {% if profile.post.all %}
             {% for data in profile.post.all %}
           
-            
-          <div  style="box-shadow: 6px 6px 30px hsl(0,0%,87%);padding: 20px;" class="item mb-5">
-            <div class="media">
-              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{data.img.url}}" alt="image">
-              <div class="media-body">
-                <h3 class="title mb-1"><a style="color: #333333;" href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h3>
-                <div class="meta mb-1"><span class="date">{{data.timestamp}}</span><span class="time">5 min read</span><span class="comment"><a href="#">{{profile.user}}</a></span></div>
-    
-             
-            
-                <a class="more-link" href="{% url 'blogapp:postdetail' data.pk %}">Read more &rarr;</a>
-              </div><!--//media-body-->
-            </div><!--//media-->
-          </div><!--//item-->
+            <div class="card border-light mb-3">
+              <div class="card-header">Author:{{user.first_name}} {{user.last_name}}</div>
+              <!--<img class="card-img-top" src="{{data.img}}" alt="Card image cap">-->
+              <div class="card-body">
+                <h5 class="card-title"><a style="color:#212529;" href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h5>
+                <p class="card-text">{{data.intro|safe}}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
             {% endfor %}
             {% else %}
             <p style="font-weight: 500;text-align: center;">You have no posts yet.</p>
+            <h4 style="text-align: center;"><a href="#">Create a new post</a></h4>
+            
             {% endif %}
 
             <br>
 
 
-
-
-
             <h3 style="font-weight: 300;">Public Posts</h3><br>
-
             {% for data in posts %}
-
-            <div  style=";padding: 20px;" class="item mb-5">
-            <div class="media">
-              <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{data.img.url}}" alt="image">
-              <div class="media-body">
-                <h3 class="title mb-1"><a href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h3>
-                <div class="meta mb-1"><span class="date">{{data.timestamp}}</span><span class="time">5 min read</span><span class="comment"><a href="#">{{profile.post.user.first_name}}</a></span></div>
-               
-       
-
-              
-                <a class="more-link" href="{% url 'blogapp:postdetail' data.pk %}">Read.&rarr;</a>
-              </div><!--//media-body-->
-            </div><!--//media-->
-          </div><!--//item-->
+            
+            <div class="card border-light mb-3">
+              <div style="background-color: white;" class="card-header">Author : {{profile.user.}}</div>
+              <!--<img class="card-img-top" src="{{data.img}}" alt="Card image cap">-->
+              <div class="card-body">
+                <h3 class="card-title"><a style="color:#212529;" href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h3>
+                <p class="card-text">{{data.intro|safe}}<a href="{% url 'blogapp:postdetail' data.pk %}">Read more</a></p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+           
           {% endfor %}
+       
+          
+          
             </div>
           
 

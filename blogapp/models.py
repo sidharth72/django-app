@@ -26,10 +26,11 @@ class Data(models.Model):
 
 class Post(models.Model):
 
-    title = models.CharField(max_length=200)
-    img = models.ImageField(upload_to = '')
+
+    title = models.CharField(max_length=200,blank=True)
+    img = models.ImageField(upload_to = '',blank=True)
+    intro = models.TextField()
     blog = HTMLField()
-    url = models.SlugField()
     timestamp = models.DateTimeField(default = timezone.now)
     likes = models.IntegerField(default=0)
 
@@ -38,11 +39,11 @@ class Post(models.Model):
         ordering = ['-timestamp']
             
 
-
     def __str__(self):
 
         return self.title
 
+   
 class Profile(models.Model):
 
     user = models.OneToOneField(User,on_delete = models.CASCADE)

@@ -5,21 +5,22 @@ from django.contrib import messages
 import time
 import wikipedia as wk
 from django.views.generic import ListView,DetailView,FormView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import FormMixin
 from .models import Post,Profile
-from .forms import UpdateProfileForm,UserForm
+from .forms import UpdateProfileForm,UserForm,BlogPostForm
 from django.http import JsonResponse
 import re
 
 
 # Create your views here.
 
+#Post listing page
 class PostList(ListView):
 
 	model = Post
 
-	
-	
-
+#Post detail page 	
 class PostDetail(DetailView):
 	model = Post
 	template = 'blogapp/post_detail.html'
@@ -27,23 +28,37 @@ class PostDetail(DetailView):
 	title_url_kwarg = 'title'
 
 
-class ProfileDetail(DetailView):
+#Profile page of users
+class ProfileDetail(LoginRequiredMixin,FormMixin,DetailView):
 	model = Profile
 	template = 'blogapp/profile_detail.html'
 	slug_field = 'name'
 	slug_url_kwarg = 'name'
+	form_class = BlogPostForm
+	initial = {'key':'value'}
+
+	
+
+	def get_queryset(self):
+		search = self.request.GET.get('search')
+		return search
 
 
 	def get_context_data(self, **kwargs):
 
 		context = super(ProfileDetail, self).get_context_data(**kwargs)
 		context['posts'] = Post.objects.all()
-	
-		# And so on for more models
+
 		return context
+
 
 	def get_object(self,queryset=None):
 		return Profile.objects.get(uuid=self.kwargs.get('uuid'))
+
+
+	
+		
+
 
 
 
@@ -62,6 +77,7 @@ def EditProfileForm(request,pk,uuid):
 	context = {'user':request.user,'form':form,'profile_data':profile_data,'user_form':user_form} 	
 
 	return render(request,'blogapp/profile_form.html',context)
+
 
 
 
@@ -104,7 +120,6 @@ def search(request):
 	
 	results = 0
 	return render(request,"search.html",{"search":search,"results":results,"summary":wiki_data})
-
 
 
 #Register function                      

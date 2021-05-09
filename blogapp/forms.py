@@ -24,6 +24,17 @@ class UpdateProfileForm(forms.ModelForm):
         fields = ['profile_img'] 
 
 
+class BlogPostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = [
+
+            'title',
+            'img',
+            'intro',
+            'blog'
+
+        ]
 
 
 
@@ -41,3 +52,4 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = '__all__'
+
