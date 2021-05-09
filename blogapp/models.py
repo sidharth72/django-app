@@ -28,8 +28,6 @@ class Post(models.Model):
 
 
     title = models.CharField(max_length=200,blank=True)
-    img = models.ImageField(upload_to = '',blank=True)
-    intro = models.TextField()
     blog = HTMLField()
     timestamp = models.DateTimeField(default = timezone.now)
     likes = models.IntegerField(default=0)

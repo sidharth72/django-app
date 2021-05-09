@@ -20,6 +20,7 @@
     <link id="theme-style" rel="stylesheet" href="{% static 'css/theme-1.css' %}">
 
 
+  {{form.media}}
 </head> 
 
 <body>
@@ -126,7 +127,15 @@
     
         <br>
 
+        <div>
+          <form action="" method="post">
+            {% csrf_token %}
+            <p>{{form.as_p}}</p>
+            <input type='submit' value="Post" >
+          </form>
+        </div>
 
+        
         <h3 style="font-weight: 300;">My Posts</h3><br>
         
 
@@ -205,7 +214,17 @@
     <script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script> 
 
     <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
-    <script src="{% static 'js/demo/style-switcher.js' %}"></script>     
+    <script src="{% static 'js/demo/style-switcher.js' %}"></script>  
+    <script>
+      tinymce.init({
+          selector:'.editor',
+          setup: function (editor) {
+              editor.on('submit', function (e) {
+                  editor.save();
+              });
+          }
+       });
+      </script>   
     
 
 </body>

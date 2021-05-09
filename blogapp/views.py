@@ -6,9 +6,9 @@ import time
 import wikipedia as wk
 from django.views.generic import ListView,DetailView,FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import FormMixin
+from django.views.generic.edit import FormMixin,FormView
 from .models import Post,Profile
-from .forms import UpdateProfileForm,UserForm,BlogPostForm
+from .forms import UpdateProfileForm,UserForm,PostForm
 from django.http import JsonResponse
 import re
 
@@ -34,9 +34,11 @@ class ProfileDetail(LoginRequiredMixin,FormMixin,DetailView):
 	template = 'blogapp/profile_detail.html'
 	slug_field = 'name'
 	slug_url_kwarg = 'name'
-	form_class = BlogPostForm
+	form_class = PostForm
 	initial = {'key':'value'}
 
+	def get_success_url(self):
+		self.request.path
 	
 
 	def get_queryset(self):
@@ -55,10 +57,17 @@ class ProfileDetail(LoginRequiredMixin,FormMixin,DetailView):
 	def get_object(self,queryset=None):
 		return Profile.objects.get(uuid=self.kwargs.get('uuid'))
 
+	def post(self,request,*args,**kwargs):
 
-	
+		self.object = self.get_object()
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return self.form_valid(form)
+
+	def form_valid(self,form):
 		
-
+		return super(ProfileDetail,self).form_valid(form)
 
 
 
@@ -133,7 +142,7 @@ def register(request):
 		password1 = request.POST.get("password1")
 		password2 = request.POST.get('password2')
 
-		print(type(password1))
+		
 
 		if len(password1) < 7:
 

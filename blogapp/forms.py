@@ -24,32 +24,15 @@ class UpdateProfileForm(forms.ModelForm):
         fields = ['profile_img'] 
 
 
-class BlogPostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = [
-
-            'title',
-            'img',
-            'intro',
-            'blog'
-
-        ]
-
-
-
-class TinyMCEWidget(TinyMCE):
-    def use_required_attribute(self, *args):
-        return False
 
 
 class PostForm(forms.ModelForm):
-    content = forms.CharField(
-        widget=TinyMCEWidget(
-            attrs={'required': False, 'cols': 30, 'rows': 10}
-        )
-    )
+
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ['title','blog']
+        widgets = {
+
+            'title':forms.TextInput(attrs={'class':'form-control','placeholder':'Your Title..'})
+        }
 
