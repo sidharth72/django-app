@@ -2,6 +2,9 @@ from .models import Profile,Post
 from django import forms
 from django.contrib.auth.models import User
 from tinymce.widgets import TinyMCE
+from django.forms import ModelChoiceField
+from django.forms.models import inlineformset_factory
+
 
 
 
@@ -17,22 +20,22 @@ class UserForm(forms.ModelForm):
         }
 
 class UpdateProfileForm(forms.ModelForm):
-
     class Meta:
         model = Profile
 
-        fields = ['profile_img'] 
+        fields = '__all__'
 
 
 
 
-class PostForm(forms.ModelForm):
+#class PostForm(forms.ModelForm):
+ #   profile_data = forms.ModelChoiceField(queryset=Profile.objects.all())
+  #  class Meta:
+   #     model = Post
+    #    fields = ['title','blog']
+     #   widgets = {
 
-    class Meta:
-        model = Post
-        fields = ['title','blog']
-        widgets = {
+      #      'title':forms.TextInput(attrs={'class':'form-control','placeholder':'Your Title..'})
+       # }
 
-            'title':forms.TextInput(attrs={'class':'form-control','placeholder':'Your Title..'})
-        }
-
+#ProfilePostForm = inlineformset_factory(Post,Profile,fields=('post'))

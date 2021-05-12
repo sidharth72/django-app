@@ -116,9 +116,9 @@
             {% for post in posts %}
             {% if request.GET.search in post.title or request.GET.search in post.blog %}
 
-            <br>
-            <a style="font-size: 20px;color: blue;" href="{% url 'blogapp:postdetail' post.pk %}" class="card-title">{{post.title}}</a><br>
-            <p class="card-text">{{post.blog|safe|truncatewords:50}}<a href="{% url 'blogapp:postdetail' post.pk %}">. . . .Read more</a></p>
+        
+            <a style="font-size: 20px;color: #1a0dab;text-decoration: underline;" href="{% url 'blogapp:postdetail' post.pk %}" class="card-title">{{post.title}}</a>
+            <p class="card-text">{{post.blog|safe|stringformat:'.500s'}}<a href="{% url 'blogapp:postdetail' post.pk %}">. . . .Read more</a></p>
          
             {% endif %}
             {% endfor %}
@@ -126,14 +126,15 @@
         </div>
     
         <br>
-
+        {% if user.is_authenticated %}
         <div>
           <form action="" method="post">
             {% csrf_token %}
-            <p>{{form.as_p}}</p>
+            <p>{{form.post}}</p>
             <input type='submit' value="Post" >
           </form>
         </div>
+        {% endif %}
 
         
         <h3 style="font-weight: 300;">My Posts</h3><br>
@@ -144,11 +145,11 @@
             {% for data in profile.post.all %}
           
             <div class="card border-light mb-3">
-              <div class="card-header">Author:{{user.first_name}} {{user.last_name}}</div>
+              <div style="background-color: white;" class="card-header">Author:{{user.first_name}} {{user.last_name}}</div>
               <!--<img class="card-img-top" src="{{data.img}}" alt="Card image cap">-->
               <div class="card-body">
                 <h5 class="card-title"><a style="color:#212529;" href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h5>
-                <p class="card-text">{{data.intro|safe}}</p>
+                <p class="card-text">{{data.blog|safe|stringformat:'.500s'}}<a href="{% url 'blogapp:postdetail' data.pk %}">Read more..</a></p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
@@ -170,7 +171,8 @@
               <!--<img class="card-img-top" src="{{data.img}}" alt="Card image cap">-->
               <div class="card-body">
                 <h3 class="card-title"><a style="color:#212529;" href="{% url 'blogapp:postdetail' data.pk %}">{{data.title}}</a></h3>
-                <p class="card-text">{{data.intro|safe}}<a href="{% url 'blogapp:postdetail' data.pk %}">Read more</a></p>
+                <p class="card-text">{{data.blog|safe|stringformat:'.500s'}}
+                <a style="color: dodgerblue;" href="{% url 'blogapp:postdetail' data.pk %}">Read more..</a></p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>

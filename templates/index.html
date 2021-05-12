@@ -54,19 +54,19 @@
               <h5><a  class="nav-link" href="/">Home</a></h5>
           </li>
 
-          <li class="nav-item">
+          <!--<li class="nav-item">
               <h5><a  class="nav-link" href="/login">Sign in</a></h5>
-          </li>
+          </li>-->
           <li class="nav-item">
-              <h5><a class="nav-link" href="/register">Create Account</a></h5>
-          </li>
-
-          <li class="nav-item">
-              <h5><a class="nav-link" href="/newposts">Public Posts</a></h5>
+              <h5><a class="nav-link" href="/register">Subscribe</a></h5>
           </li>
 
           <li class="nav-item">
-              <h5 style="margin-top: 60px;"><a class="nav-link" href="#">- About us -</a></h5>
+              <h5><a class="nav-link" href="/newposts">Recent posts</a></h5>
+          </li>
+
+          <li class="nav-item">
+              <h5 style="margin-top: 60px;"><a class="nav-link" href="#">About us</a></h5>
           </li>
 
           <li class="nav-item">
@@ -81,14 +81,6 @@
         <div class="my-2 my-md-3">
             <!--<a class="btn btn-primary" href="{% provider_login_url 'google' %}" target="_blank">Signin with <i class="fab fa-google"></i></a>-->
 
-        
-              <h5>Sign in with</h5>
-        
-
-            <ul class="social-list list-inline py-3 mx-auto">
-              <li class="list-inline-item"><a href="#"><i class="fab fa-google fa-fw"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
-           
           
           
           </ul>
@@ -99,33 +91,14 @@
     </header>
     
     <div class="main-wrapper">
-
-      <div style="position: absolute;right: 0;align-items: right;" class="btn-group">
-        <button type="button" class="btn btn-outline-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-weight: 500;margin-right: 30px;">
-          Categories
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-        </div>
-      </div>
-      <section class="cta-section theme-bg-light py-5">
-        <div class="container text-center">
-          
-          <h1 class="heading" style="color:#006666;"><a href="/login">Sign in </a>to Blogosphere.org</h1>
-          <div style="padding:25px;font-size: 20px;color: hsl(0,0%,0%);" class="intro">Explore more by creating your Account. Scribble your thoughts about something you are great at!..</div>
-          <form action="/search" method="get" class="signup-form form-inline justify-content-center pt-3">
-                    <div class="form-group">
+              
+          <form style="margin-top: 20px;margin-right: 10px; margin-left: 20px;" action="/search" method="get">
+                
                         <label class="sr-only" for="semail">Search</label>
-                        <input type="text" id="semail" name="search" class="form-control mr-md-1 semail" placeholder="Search posts , Keywords ..">
-                    </div>
-                    <input type="submit" value="-search" class="btn btn-outline-default">
-                </form>
-        </div><!--//container-->
-      </section>
+                        <input style="background-color:hsl(0,0%,100%);border-radius: 50px;padding:20px;" type="text" id="semail" name="search" class="form-control" placeholder="Search posts , Keywords .. hit enter">
+                
+                </form><br>
+      
       <section class="blog-list px-3 py-5 p-md-5">
         <div class="container">
 
