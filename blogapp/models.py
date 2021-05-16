@@ -35,7 +35,7 @@ class Post(models.Model):
 class Profile(models.Model):
 
     user = models.OneToOneField(User,on_delete = models.CASCADE)
-    profile_img = models.ImageField(default='default.jpg',upload_to='profilepics')
+    #profile_img = models.ImageField(default='default.jpg',upload_to='profilepics')
     name = models.CharField(max_length=200,null=True,blank=True,unique=True)
     post = models.ManyToManyField(Post,blank=True)
     uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)

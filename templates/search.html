@@ -5,7 +5,7 @@
 
 
 <div class="card">
-  <div class="card-header">
+  <div style="background-color: white;" class="card-header">
     Search results:{{results}} {{search}}
   </div>
 
@@ -15,7 +15,7 @@
 {% if search in search_data.title or search in search_data.blog %}
 
     <a style="font-size: 20px;font-weight: 600px;color: teal;" href="{% url 'blogapp:postdetail' search_data.slug %}" class="card-title">{{search_data.title}}</a>
-    <p class="card-text">{{search_data.blog|safe|truncatewords:50}}<a href="{% url 'blogapp:postdetail' search_data.slug %}">. . . .Read more</a></p>
+    <p class="card-text">{{search_data.blog|safe|truncatewords:100}}<a href="{% url 'blogapp:postdetail' search_data.slug %}">. . . .Read more</a></p>
     <br>
 {% endif %}
 {% endfor %}
