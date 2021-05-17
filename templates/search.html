@@ -4,21 +4,27 @@
 
 
 
-<div class="card">
+<div style="border: solid white;" class="card">
   <div style="background-color: white;" class="card-header">
     Search results:{{results}} {{search}}
   </div>
+
 
   <div class="card-body">
 {% for search_data in search_datas %}
 
 {% if search in search_data.title or search in search_data.blog %}
 
-    <a style="font-size: 25px;font-weight: 600;color: teal;" href="{% url 'blogapp:postdetail' search_data.slug %}" class="card-title">→ {{search_data.title|upper}}</a>
+
+    <a style="font-size: 25px;font-weight: 600;color: teal;" href="{% url 'blogapp:postdetail' search_data.slug %}" class="card-title">⚫ {{search_data.title|title}}</a>
     <p class="card-text">{{search_data.blog|safe|truncatewords:100}}<a href="{% url 'blogapp:postdetail' search_data.slug %}">. . . .Read more</a></p>
     <br>
+    {% else %}
+    
+
 {% endif %}
 {% endfor %}
+
  
   </div>
 </div>

@@ -131,8 +131,6 @@ def register(request):
 		first_name = request.POST.get('first_name')
 		last_name = request.POST.get('last_name')
 		username = request.POST.get("username")
-
-
 	
 
 		username_pattern = re.findall("\s",username)
