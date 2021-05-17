@@ -140,10 +140,10 @@ def register(request):
 
 		
 		if User.objects.filter(username = username).exists():
-			messages.info(request,"Username already exists")
+			messages.info(request,"Email already exists")
 		
 		elif  username_pattern:
-			messages.info(request,'Username not available')
+			messages.info(request,'Not a valid email address')
 
 		elif User.objects.filter(email=username).exists():
 			messages.info(request,'Email exists')

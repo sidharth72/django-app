@@ -107,3 +107,12 @@ function onClick(){
     })
 }
 
+$(document).ready(function(){
+  $('#sub-btn').click(function(){
+    if($('#username-reg').val() && $('#firstname-reg').val() && $('#lastname-reg').val()){   
+      $('#sub-btn').text("submitting...")
+    }
+
+  });
+
+});

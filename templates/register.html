@@ -20,11 +20,11 @@
 
 
           <label for="psw"><b style="color: grey;font-weight: 500;font-size: 17px;">First name -</b></label>
-          <input  style="border-radius: 0px;padding: 20px;font-size: 15px;border: solid white;border-left-color: #006666;background-color: hsl(0,0%,95%);" class='form-control' type="text" placeholder="Enter firstname" name="first_name"  required>
+          <input  style="border-radius: 0px;padding: 20px;font-size: 15px;border: solid white;border-left-color: #006666;background-color: hsl(0,0%,95%);" class='form-control' type="text" placeholder="Enter firstname" name="first_name" id='firstname-reg'  required>
 
 
           <label for="psw"><b style="color: grey;font-weight: 500;font-size: 17px;">Last name -</b></label>
-          <input  style="border-radius: 0px;padding: 20px;font-size: 15px;border: solid white;border-left-color: #006666;background-color: hsl(0,0%,95%);" class='form-control' type="text" placeholder="Enter lastname" name="last_name">
+          <input  style="border-radius: 0px;padding: 20px;font-size: 15px;border: solid white;border-left-color: #006666;background-color: hsl(0,0%,95%);" class='form-control' type="text" placeholder="Enter lastname" name="last_name" id='lastname-reg'> 
 
           <label for="psw"><b style="color: grey;font-weight: 500;font-size: 17px;">Email -</b></label>
           <input  style="border-radius: 0px;padding: 20px;font-size: 15px;border: solid white;border-left-color: #006666;background-color: hsl(0,0%,95%);" class='form-control' type="text" placeholder="Enter Your Email" name="username" id="username-reg" required>
@@ -37,7 +37,7 @@
         {% endfor %}
    
        
-        <button type="submit" class="btn btn-primary">Subscribe</button>
+        <button id='sub-btn' type="submit" class="btn btn-primary">Subscribe</button>
         </div>
 
   <div class="container signin">
