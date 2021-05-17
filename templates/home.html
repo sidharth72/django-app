@@ -10,7 +10,7 @@
     <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{object.img.url}}" alt="image">
 
     <div class="media-body">
-      <h3 style="font-weight: 500;color: #202124;" class="title mb-1"><a href="{% url 'blogapp:postdetail' object.slug %}">{{object.title}}</a></h3>
+      <h3 style="font-weight: 500;" class="title mb-1"><a style="color: slateblue;" href="{% url 'blogapp:postdetail' object.slug %}">{{object.title}}</a></h3>
       <div class="meta mb-1"><span class="date">{{object.timestamp}}</span></div>
       
   
