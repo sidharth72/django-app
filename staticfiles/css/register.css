@@ -1,0 +1,100 @@
+
+/* Full-width input fields */
+.reg-form{
+
+  box-shadow: 5px 5px 10px hsl(0,0%,80%);
+}
+
+.text-input,.password-input, .email-input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.text-input:focus, .password-input:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: mediumseagreen;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  
+}
+
+.registerbtn:hover {
+  opacity:0.9;
+
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  text-align: center;
+  line-height: 3;
+}
+
+@media (min-width: 1000px){
+  .text-input,.password-input, .email-input 
+
+  {
+    width: 500px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: block;
+    border: none;
+    background: #f1f1f1;
+  }
+  .registerbtn {
+    background-color: mediumseagreen;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    font-size: 20px;
+    font-family: monospace;
+  }
+  .signin {
+  
+    text-align: center;
+    width: 60%;
+}
+#login-form{
+
+  box-shadow: 5px 5px 30px hsl(0,0%,90%);
+  padding: 20px;
+}
+#register-form{
+
+  /*align-items: center;
+  display: block;
+  margin: auto;*/
+  box-shadow: 5px 5px 30px hsl(0,0%,90%);
+  padding: 30px;
+
+}
+
+
+}
+
