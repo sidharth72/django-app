@@ -17,7 +17,7 @@
 
 
     <a style="font-size: 25px;font-weight: 600;color: teal;" href="{% url 'blogapp:postdetail' search_data.slug %}" class="card-title">⚫ {{search_data.title|title}}</a>
-    <p class="card-text">{{search_data.blog|safe|truncatewords:100}}<a href="{% url 'blogapp:postdetail' search_data.slug %}">. . . .Read more</a></p>
+    <p class="card-text">{{search_data.intro|safe}}<a href="{% url 'blogapp:postdetail' search_data.slug %}">. . . .Read more</a></p>
     <br>
     {% else %}
     

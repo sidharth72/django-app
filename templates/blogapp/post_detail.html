@@ -8,12 +8,12 @@
     <div class="container">
       <header class="blog-post-header">
         <h2 style="color:#333333;font-size: 35px;line-height: 45px;font-weight: 700;" class="title mb-2">{{object.title}}</h2>
-        <div class="meta mb-3"><span class="date">{{object.timestamp}}</span><span class="time"></span><span class="comment"><a href="#"></a></span></div>
+        <div class="meta mb-3"><span class="date">{{object.timestamp}}</span></div>
       </header>
       
       <div class="blog-post-body">
         <figure class="blog-banner">
-            <a href="https://made4dev.com"><img class="img-fluid" src="{{object.img.url}}" alt="image"></a>
+            <a href="https://made4dev.com"><img class="img-fluid" src="{{object.img.url}}" alt="image"></a><br><br>
          
         </figure>
         <p>{{object.blog|safe}}</p>
