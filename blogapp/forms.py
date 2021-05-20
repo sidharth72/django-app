@@ -1,4 +1,4 @@
-from .models import Profile,Post
+from .models import Profile,Post,Comment
 from django import forms
 from django.contrib.auth.models import User
 from tinymce.widgets import TinyMCE
@@ -25,7 +25,15 @@ class UpdateProfileForm(forms.ModelForm):
 
         fields = '__all__'
 
-
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['name','email','body']
+        widgets = {
+            'name':forms.TextInput(attrs={'class':'form-control','placeholder':'Your name'}),
+            'email':forms.TextInput(attrs={'class':'form-control','placeholder':'Your email'}),
+            'body':forms.Textarea(attrs={'class':'form-control','placeholder':'Your comment..'})
+        }
 
 
 #class PostForm(forms.ModelForm):
@@ -39,3 +47,8 @@ class UpdateProfileForm(forms.ModelForm):
        # }
 
 #ProfilePostForm = inlineformset_factory(Post,Profile,fields=('post'))
+
+
+
+
+

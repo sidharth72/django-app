@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -7,10 +7,11 @@ import wikipedia as wk
 from django.views.generic import ListView,DetailView,FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormMixin,FormView
-from .models import Post,Profile
-from .forms import UpdateProfileForm,UserForm
+from .models import Post,Profile,Comment
+from .forms import CommentForm,UpdateProfileForm
 from django.http import JsonResponse
 import re
+from django.urls import path,reverse
 
 
 # Create your views here.
@@ -21,11 +22,45 @@ class PostList(ListView):
 	model = Post
 
 #Post detail page 	
-class PostDetail(DetailView):
+class PostDetail(DetailView,FormMixin):
 	model = Post
 	template = 'blogapp/post_detail.html'
 	slug_field = 'slug'
 	slug_url_kwarg = 'slug'
+	form_class = CommentForm
+	initial = {'key':'value'}
+	
+
+	def get_context_data(self,**kwargs):
+		context = super(PostDetail,self).get_context_data(**kwargs)
+		comments_connected = Comment.objects.filter(post=self.get_object(),active=True)
+		context['comments'] = comments_connected
+
+		return context
+
+	def get_success_url(self):
+		return reverse('/')
+
+	def post(self,request,slug,*args,**kwargs):
+		self.object = self.get_object()
+		post = get_object_or_404(Post,slug=slug)
+		new_comment = None
+
+		form = self.get_form()
+
+		if request.method == "POST":
+
+			if form.is_valid():
+				new_comment = form.save(commit=False)
+				new_comment.post = post
+		
+				new_comment.save()
+				return self.form_valid(form)
+				
+
+	def form_valid(self,form):
+		return super(PostDetail,self).form_valid(form)
+
 
 
 #Profile page of users
@@ -89,8 +124,7 @@ def home(request):
 #		user_form.save()
 #	context = {'user':request.user,'form':form,'profile_data':profile_data,'user_form':user_form} 	
 #
-#	return render(request,'blogapp/profile_form.html',context)
-
+#	return render(request,'blogapp/profile_form.html',context) 
 
 
 
