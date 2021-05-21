@@ -29,17 +29,18 @@ class PostDetail(DetailView,FormMixin):
 	slug_url_kwarg = 'slug'
 	form_class = CommentForm
 	initial = {'key':'value'}
+
 	
 
 	def get_context_data(self,**kwargs):
 		context = super(PostDetail,self).get_context_data(**kwargs)
 		comments_connected = Comment.objects.filter(post=self.get_object(),active=True)
 		context['comments'] = comments_connected
-
 		return context
 
 	def get_success_url(self):
-		return reverse('/')
+		return reverse("blogapp:postdetail",kwargs={'slug':self.kwargs['slug']})
+
 
 	def post(self,request,slug,*args,**kwargs):
 		self.object = self.get_object()

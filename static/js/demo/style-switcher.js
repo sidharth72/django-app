@@ -118,11 +118,12 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('#comment-confirm').click(function(){
-    if($('#comment-form').val()){
-      $('#comment-confirm').text("posting your comment...")
-      alert(' Your comment is awaiting moderation')
+  $('.btn-info').click(function(){
 
-    }
+      alert('Your comment is awaiting moderation')
+      
+      
+
+    
   })
 })
