@@ -15,6 +15,7 @@ urlpatterns = [
 	#path('profile/<int:pk>/<uuid:uuid>',login_required(views.ProfileDetail.as_view()),name='profile'),
 	#path('login',views.login,name='login'),
 	path('register',views.register,name='register'),
+	path('contact',views.contact,name='contact'),
 
 	#path('profile/<int:pk>/editprofile/<uuid:uuid>',login_required(views.EditProfileForm),name='editprofile'),	
 	#path('logout',views.logout,name="logout"),

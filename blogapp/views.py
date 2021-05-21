@@ -63,6 +63,10 @@ class PostDetail(DetailView,FormMixin):
 		return super(PostDetail,self).form_valid(form)
 
 
+def contact(request):
+
+	return render(request,'contact.html')
+
 
 #Profile page of users
 #class ProfileDetail(LoginRequiredMixin,FormMixin,DetailView):

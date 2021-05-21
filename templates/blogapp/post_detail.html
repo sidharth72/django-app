@@ -23,6 +23,7 @@
         <br>
 
         <h2 style='font-weight:700;'>Comments</h2>
+        {% if comments %}
         {% for comment in comments %}
         <br>
         <div class="container" style="box-shadow: 5px 5px 20px hsl(0,0%,80%);padding: 20px;">
@@ -66,6 +67,9 @@
             
      
         {% endfor %}
+        {% else %}
+        <p style="text-align: center;">No comments</p>
+        {% endif %}
 
         <br>
         <div style="border: solid 1px hsl(0,0%,87%);padding:20px;border-radius: 10px;">
