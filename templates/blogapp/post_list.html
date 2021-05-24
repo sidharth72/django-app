@@ -21,8 +21,8 @@
               <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{i.img.url}}" alt="image">
 
               <div class="media-body">
-                <h3 style="font-weight: 500;" class="title mb-1"><a style="color: darkslateblue;" href="{% url 'blogapp:postdetail' i.slug %}">{{i.title}}</a></h3>
-                <div class="meta mb-1"><span class="date">{{i.timestamp}}</span><span class="time"></span><span id='likes_id' class="comment"><a href="#">{{i.likes}} likes</a></span></div>
+                <h3 style="font-weight: 500;" class="title mb-1"><a style="color: #306998;" href="{% url 'blogapp:postdetail' i.slug %}">{{i.title}}</a></h3>
+                <div class="meta mb-1"><span class="date">{{i.timestamp}}</span><span class="time"></span></div>
                 
             
                 <div class="intro">{{i.intro|safe}}<a href="{% url 'blogapp:postdetail' i.slug %}">...Read more</a></div>

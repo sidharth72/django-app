@@ -118,7 +118,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('.btn-info').click(function(){
+  $('#comment-confirm').click(function(){
 
       alert('Your comment is awaiting moderation')
       
